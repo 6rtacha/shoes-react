@@ -1,0 +1,273 @@
+.order-page {
+  width: 100%;
+  height: auto;
+  background-image: #f8f8ff;
+  display: flex;
+}
+
+.order-page .order-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.order-page .order-left {
+  width: 860px;
+  height: auto;
+}
+
+.order-page .order-right {
+  width: 360px;
+  height: auto;
+  margin-top: 86px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-page .order-right .order-info-box {
+  width: 360px;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 13px 16px 4px rgba(0, 0, 0, 0.25),
+    inset 0px -3px 20px 11px #18177033;
+
+  margin-bottom: 30px;
+}
+
+.order-page .order-right .order-info-box .member-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-page .order-right .order-info-box .member-box .order-user-img {
+  position: relative;
+  width: 117px;
+  height: 112px;
+  margin-bottom: 15px;
+}
+
+.order-page .order-right .order-info-box .member-box .order-user-icon-box {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 1440px;
+  right: -1098px;
+  top: 648px;
+  bottom: -370px;
+}
+
+.order-page .order-right .order-info-box .member-box .order-user-name {
+  width: 76px;
+  height: 37px;
+  color: rgb(8, 9, 13);
+  font-family: "Commissioner";
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.order-page .order-right .order-info-box .member-box .order-user-prof {
+  width: 53px;
+  height: 37px;
+  color: rgb(161, 161, 161);
+  font-family: "Commissioner";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.order-page .order-right .order-info-box .liner {
+  width: 332.59px;
+  border: 2px solid rgb(161, 161, 161);
+  margin-bottom: 10px;
+}
+
+.order-page .order-right .order-pay-box {
+  width: 360px;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 13px 16px 4px rgba(0, 0, 0, 0.25),
+    inset 0px -3px 20px 11px #18177033;
+}
+
+.order-page .order-right .order-pay-box .card-info,
+.card-info-name {
+  width: 332px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.order-page .order-right .order-pay-box .card-info .card-number,
+.card-owner {
+  width: 325px;
+  height: 40px;
+  color: rgb(119, 119, 119);
+  font-family: Commissioner;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: left;
+  border: 1px solid rgb(180, 170, 170);
+  border-radius: 5px;
+}
+
+.order-page .order-right .order-pay-box .card-info-date-cvv {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.order-page .order-right .order-pay-box .card-info-date-cvv .card-date {
+  width: 150px;
+  height: 40px;
+  border: 1px solid rgb(180, 170, 170);
+  border-radius: 5px;
+  background: rgb(245, 245, 245);
+  display: flex;
+  align-items: center;
+}
+
+.order-page .order-right .order-pay-box .order-pay-method {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.order-page .order-right .order-pay-box .order-pay-method .pay-method-card {
+  position: relative;
+  width: 38px;
+  height: 25.68px;
+}
+
+/* PausedOrders */
+.order-main-context {
+  position: relative;
+  margin-top: 10px;
+}
+
+.order-main-context .order-main-box {
+  position: relative;
+  width: 821px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: -13px 16px 4px rgba(0, 0, 0, 0.25),
+    inset 0px -3px 20px 11px #18177033;
+  margin-bottom: 30px;
+}
+
+.order-main-context .order-main-box .order-box-scroll {
+  position: relative;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-main-context .order-main-box .order-box-scroll .order-name-price {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.order-main-context
+  .order-main-box
+  .order-box-scroll
+  .order-name-price
+  .order-dish-img {
+  position: relative;
+  width: 50px;
+  height: 47px;
+  border-radius: 29px;
+  margin-right: 20px;
+}
+
+.order-main-context
+  .order-main-box
+  .order-box-scroll
+  .order-name-price
+  .title-dish {
+  position: relative;
+  width: 200px;
+  color: rgb(0, 0, 0);
+  font-family: Commissioner;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
+
+.order-main-context
+  .order-main-box
+  .order-box-scroll
+  .order-name-price
+  .price-box {
+  position: relative;
+  width: 161px;
+  height: 27px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.order-main-context .order-main-box img {
+  position: relative;
+  width: 18px;
+  height: 17.36px;
+  margin-top: 20px;
+}
+
+.order-main-context .order-main-box .total-price-box {
+  position: relative;
+  width: 750px;
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.order-main-context .order-main-box .total-price-box .box-total {
+  position: relative;
+  width: 474px;
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.order-main-context .order-main-box .total-price-box .cancel-button,
+.pay-button {
+  width: 90px;
+  height: 36px;
+}
