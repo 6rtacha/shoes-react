@@ -267,7 +267,7 @@ export default function Products() {
                         </span>
                         <div className={"product-desc"}>
                           <MonetizationOnIcon />
-                          {product.productViews}
+                          {product.productPrice}
                         </div>
                       </Box>
                     </Stack>
