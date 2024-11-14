@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import { Link, Route, Switch, useLocation } from "react-router-dom";
+import { Link, Route, Switch, useHistory, useLocation } from "react-router-dom";
 import HomePage from "./screens/homePage";
 import ProductsPage from "./screens/productsPage";
 import OrdersPage from "./screens/ordersPage";
@@ -12,7 +12,6 @@ import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
 import HelpPage from "./screens/helpPage";
-import Test from "./screens/Test";
 import useBasket from "./hooks/useBasket";
 import AuthenticationModal from "./components/auth";
 import { T } from "../lib/types/common";
@@ -28,6 +27,7 @@ function App() {
   const [signupOpen, setSignupOpen] = useState<boolean>(false);
   const [loginOpen, setLoginOpen] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+  const history = useHistory();
 
   /** HANDLERS*/
 
@@ -37,6 +37,7 @@ function App() {
   const handleLogoutClick = (e: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(e.currentTarget);
   };
+
   const handleCloseLogout = () => setAnchorEl(null);
   const handleLogoutRequest = async () => {
     try {
@@ -44,6 +45,7 @@ function App() {
       await member.logout();
       await sweetTopSuccessAlert("Success", 700);
       setAuthMember(null);
+      await history.push("/");
     } catch (err) {
       console.log(err);
       sweetErrorHandling(Messages.error1);
