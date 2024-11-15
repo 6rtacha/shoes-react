@@ -197,9 +197,15 @@
 
 .order-main-context .order-main-box .order-box-scroll {
   position: relative;
-  height: auto;
+  overflow: hidden;
+  width: 100%;
+  min-height: 105px;
+  max-height: 205px;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
+  align-items: start;
+  overflow-y: scroll;
 }
 
 .order-main-context .order-main-box .order-box-scroll .order-name-price {
