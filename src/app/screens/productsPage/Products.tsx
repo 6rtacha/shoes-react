@@ -43,7 +43,7 @@ export default function Products(props: ProductsProps) {
     page: 1,
     limit: 8,
     order: "createdAt",
-    productCollection: ProductCollection.DISH,
+    productCollection: ProductCollection.CASUAL,
     search: "",
   });
   const [searchText, setSearchText] = useState<string>("");
@@ -167,12 +167,12 @@ export default function Products(props: ProductsProps) {
                 <Button
                   variant={"contained"}
                   color={
-                    productSearch.productCollection === ProductCollection.OTHER
+                    productSearch.productCollection === ProductCollection.CASUAL
                       ? "primary"
                       : "secondary"
                   }
                   onClick={() =>
-                    searchCollectionHandler(ProductCollection.OTHER)
+                    searchCollectionHandler(ProductCollection.CASUAL)
                   }
                 >
                   Other
@@ -180,13 +180,12 @@ export default function Products(props: ProductsProps) {
                 <Button
                   variant={"contained"}
                   color={
-                    productSearch.productCollection ===
-                    ProductCollection.DESSERT
+                    productSearch.productCollection === ProductCollection.CASUAL
                       ? "primary"
                       : "secondary"
                   }
                   onClick={() =>
-                    searchCollectionHandler(ProductCollection.DESSERT)
+                    searchCollectionHandler(ProductCollection.CASUAL)
                   }
                 >
                   Dessert
@@ -194,12 +193,12 @@ export default function Products(props: ProductsProps) {
                 <Button
                   variant={"contained"}
                   color={
-                    productSearch.productCollection === ProductCollection.DRINK
+                    productSearch.productCollection === ProductCollection.CASUAL
                       ? "primary"
                       : "secondary"
                   }
                   onClick={() =>
-                    searchCollectionHandler(ProductCollection.DRINK)
+                    searchCollectionHandler(ProductCollection.CASUAL)
                   }
                 >
                   Drink
@@ -207,12 +206,12 @@ export default function Products(props: ProductsProps) {
                 <Button
                   variant={"contained"}
                   color={
-                    productSearch.productCollection === ProductCollection.SALAD
+                    productSearch.productCollection === ProductCollection.CASUAL
                       ? "primary"
                       : "secondary"
                   }
                   onClick={() =>
-                    searchCollectionHandler(ProductCollection.SALAD)
+                    searchCollectionHandler(ProductCollection.CASUAL)
                   }
                 >
                   Salad
@@ -220,12 +219,12 @@ export default function Products(props: ProductsProps) {
                 <Button
                   variant={"contained"}
                   color={
-                    productSearch.productCollection === ProductCollection.DISH
+                    productSearch.productCollection === ProductCollection.CASUAL
                       ? "primary"
                       : "secondary"
                   }
                   onClick={() =>
-                    searchCollectionHandler(ProductCollection.DISH)
+                    searchCollectionHandler(ProductCollection.CASUAL)
                   }
                 >
                   Dish
@@ -237,7 +236,7 @@ export default function Products(props: ProductsProps) {
                 products.map((product: Product) => {
                   const imagePath = `${serverApi}/${product.productImages[0]}`;
                   const sizeVolume =
-                    product.productCollection === ProductCollection.DRINK
+                    product.productCollection === ProductCollection.CASUAL
                       ? product.productVolume + " litre"
                       : product.productSize + " size";
                   return (
