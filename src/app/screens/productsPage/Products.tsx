@@ -89,7 +89,7 @@ export default function Products(props: ProductsProps) {
     setProductSearch({ ...productSearch });
   };
 
-  const chooseDishHandler = (id: string) => {
+  const chooseProductHandler = (id: string) => {
     history.push(`/products/${id}`);
   };
 
@@ -99,7 +99,7 @@ export default function Products(props: ProductsProps) {
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Stack className={"avatar-big-box"}>
             <Stack className={"top-text"}>
-              <p>Burak Restaurant</p>
+              <p>Shoes</p>
               <Stack className={"single-search-big-box"}>
                 <input
                   type={"search"}
@@ -193,15 +193,29 @@ export default function Products(props: ProductsProps) {
                 <Button
                   variant={"contained"}
                   color={
-                    productSearch.productCollection === ProductCollection.CASUAL
+                    productSearch.productCollection === ProductCollection.SPORT
                       ? "primary"
                       : "secondary"
                   }
                   onClick={() =>
-                    searchCollectionHandler(ProductCollection.CASUAL)
+                    searchCollectionHandler(ProductCollection.SPORT)
                   }
                 >
-                  Drink
+                  Sport
+                </Button>
+                <Button
+                  variant={"contained"}
+                  color={
+                    productSearch.productCollection ===
+                    ProductCollection.CLASSIC
+                      ? "primary"
+                      : "secondary"
+                  }
+                  onClick={() =>
+                    searchCollectionHandler(ProductCollection.CLASSIC)
+                  }
+                >
+                  Classic
                 </Button>
                 <Button
                   variant={"contained"}
@@ -214,20 +228,7 @@ export default function Products(props: ProductsProps) {
                     searchCollectionHandler(ProductCollection.CASUAL)
                   }
                 >
-                  Salad
-                </Button>
-                <Button
-                  variant={"contained"}
-                  color={
-                    productSearch.productCollection === ProductCollection.CASUAL
-                      ? "primary"
-                      : "secondary"
-                  }
-                  onClick={() =>
-                    searchCollectionHandler(ProductCollection.CASUAL)
-                  }
-                >
-                  Dish
+                  Casual
                 </Button>
               </div>
             </Stack>
@@ -235,21 +236,18 @@ export default function Products(props: ProductsProps) {
               {products.length !== 0 ? (
                 products.map((product: Product) => {
                   const imagePath = `${serverApi}/${product.productImages[0]}`;
-                  const sizeVolume =
-                    product.productCollection === ProductCollection.CASUAL
-                      ? product.productVolume + " litre"
-                      : product.productSize + " size";
+                  const size = product.productSize + " size";
                   return (
                     <Stack
                       key={product._id}
                       className={"product-card"}
-                      onClick={() => chooseDishHandler(product._id)}
+                      onClick={() => chooseProductHandler(product._id)}
                     >
                       <Stack
                         className={"product-img"}
                         sx={{ backgroundImage: `url(${imagePath})` }}
                       >
-                        <div className={"product-sale"}>{sizeVolume}</div>
+                        <div className={"product-sale"}>{size}</div>
                         <Button
                           className={"shop-btn"}
                           onClick={(e) => {
