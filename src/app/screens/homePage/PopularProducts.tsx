@@ -84,7 +84,7 @@ export default function PopularProducts() {
                           startDecorator={<DescriptionOutlinedIcon />}
                           textColor="neutral.300"
                         >
-                          {/* {product.productDesc} */}
+                          {product.productSeason}
                         </Typography>
                       </CardOverflow>
                     </Card>

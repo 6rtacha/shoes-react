@@ -23,3 +23,14 @@ export enum ProductCollection {
   CLASSIC = "CLASSIC",
   CASUAL = "CASUAL",
 }
+
+export enum ProductSize {
+  ALL = "ALL",
+  SIZE250 = "250",
+  SIZE255 = "255",
+  SIZE260 = "260",
+  SIZE265 = "265",
+  SIZE270 = "270",
+  SIZE275 = "275",
+  SIZE280 = "280",
+}

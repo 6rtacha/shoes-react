@@ -65,7 +65,7 @@
 
 .homepage .popular-dishes-frame .popular-section .category-title {
   text-align: center;
-  font-family: "Roboto Serif";
+  font-family: "Courier New", Courier, monospace;
   font-size: 36px;
   font-style: normal;
   font-weight: 600;
@@ -133,7 +133,7 @@
 }
 
 .homepage .new-products-frame .category-title {
-  font-family: "Dancing Script";
+  font-family: "Courier New", Courier, monospace;
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -148,7 +148,7 @@
 }
 
 .homepage .new-products-frame .main .card {
-  height: 335px;
+  height: 340px;
   width: 290px;
   cursor: pointer;
 }
@@ -268,7 +268,7 @@
 
 .homepage .active-users-frame .main .category-title {
   text-align: center;
-  font-family: "Roboto Serif";
+  font-family: "Courier New", Courier, monospace;
   font-size: 36px;
   font-style: normal;
   font-weight: 600;
@@ -332,7 +332,7 @@
 }
 
 .homepage .events-frame .category-title {
-  font-family: "Dancing Script";
+  font-family: "Courier New", Courier, monospace;
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -446,7 +446,7 @@
 }
 
 .homepage .events-frame .event-organizator .spec-text-author {
-  font-family: "GT Walsheim Pro";
+  font-family: "Courier New", Courier, monospace;
   font-style: normal;
   line-height: 34px;
   color: #140342;
@@ -454,7 +454,7 @@
 
 .homepage .events-frame .bott-left .text-desc {
   margin-top: 10px;
-  font-family: "GT Walsheim Pro";
+  font-family: "Courier New", Courier, monospace;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
@@ -478,7 +478,7 @@
   flex-direction: row;
   width: auto;
   height: 100%;
-  font-family: "GT Walsheim Pro";
+  font-family: "Courier New", Courier, monospace;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;

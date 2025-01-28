@@ -1,11 +1,20 @@
+.brand-name {
+  color: #f1f1f1;
+  font-size: 70px;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 15px;
+  font-family: cursive;
+}
+
 .foot-desc-txt {
   margin-top: 22px;
-  font-family: "Poppins";
+  font-family: "Courier New", Courier, monospace;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 34px;
-  color: #e3c08d;
+  color: #edf4f7;
 }
 
 .sns-context {
@@ -18,7 +27,7 @@
 
 .foot-category-title {
   width: 106px;
-  font-family: "Poppins";
+  font-family: "Courier New", Courier, monospace;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -33,7 +42,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 170px;
-  font-family: "Poppins";
+  font-family: "Courier New", Courier, monospace;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -41,8 +50,9 @@
 }
 
 .foot-category-link a {
-  color: #e3c08d;
+  color: #edf4f7;
   text-decoration: none;
+  font-weight: bolder;
   cursor: pointer;
 }
 
@@ -52,38 +62,38 @@
 }
 
 .find-us span {
-  font-family: "Poppins";
+  font-family: "Courier New", Courier, monospace;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 34px;
-  color: #c5c8c9;
+  color: #edf4f7;
 }
 
 .find-us div {
   margin-left: 10px;
-  font-family: "Poppins";
+  font-family: "Courier New", Courier, monospace;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 34px;
-  color: #e3c08d;
+  color: #edf4f7;
 }
 
 .copyright-txt {
   margin-top: 17px;
-  font-family: "Poppins";
+  font-family: "Courier New", Courier, monospace;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 34px;
-  color: #e3c08d;
+  color: #edf4f7;
 }
 
 .foot-category-title:after {
   display: block;
   content: "";
-  border-bottom: solid 2px #d7b686;
+  border-bottom: solid 2px #edf4f7;
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
   transform-origin: 0% 50%;
