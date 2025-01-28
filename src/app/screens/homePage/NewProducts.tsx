@@ -12,19 +12,22 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import { useSelector } from "react-redux";
 import { createSelector } from "@reduxjs/toolkit";
 import { Product } from "../../../lib/types/product";
-import { retrieveNewDishes } from "./selector";
+import { retrieveNewProducts } from "./selector";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import { serverApi } from "../../../lib/config";
 
 /** Redux Slice & Selector */
-const newDishesRetriever = createSelector(retrieveNewDishes, (newDishes) => ({
-  newDishes,
-}));
+const newProductsRetriever = createSelector(
+  retrieveNewProducts,
+  (newProducts) => ({
+    newProducts,
+  })
+);
 
-export default function NewDishes() {
-  const { newDishes } = useSelector(newDishesRetriever);
+export default function NewProducts() {
+  const { newProducts } = useSelector(newProductsRetriever);
 
-  console.log("newDishes:", newDishes);
+  console.log("newProducts:", newProducts);
   return (
     <div className={"new-products-frame"}>
       <Container>
@@ -32,8 +35,8 @@ export default function NewDishes() {
           <Box className={"category-title"}>Fresh Menu</Box>
           <Stack className={"cards-frame"}>
             <CssVarsProvider>
-              {newDishes.length !== 0 ? (
-                newDishes.map((product) => {
+              {newProducts.length !== 0 ? (
+                newProducts.map((product) => {
                   const imagePath = `${serverApi}/${product.productImages[0]}`;
                   const sizeVolume =
                     product.productCollection === ProductCollection.CASUAL

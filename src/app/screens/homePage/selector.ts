@@ -4,14 +4,14 @@ import HomePage from ".";
 
 const selectHomePage = (state: AppRootState) => state.homePage;
 
-export const retrievePopularDishes = createSelector(
+export const retrievePopularProducts = createSelector(
   selectHomePage,
-  (homePage) => homePage.popularDishes
+  (homePage) => homePage.popularProducts
 );
 
-export const retrieveNewDishes = createSelector(
+export const retrieveNewProducts = createSelector(
   selectHomePage,
-  (homePage) => homePage.newDishes
+  (homePage) => homePage.newProducts
 );
 
 export const retrieveTopUsers = createSelector(

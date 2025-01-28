@@ -30,22 +30,22 @@
 
 .homepage .static-frame .info .static-box .static-num {
   text-align: center;
-  font-family: "Poppins";
+  font-family: "Courier New", Courier, monospace;
   font-size: 54px;
   font-style: normal;
   font-weight: 600;
   line-height: 80px;
-  color: #d7b686;
+  color: #f7f5f3;
 }
 
 .homepage .static-frame .info .static-box .static-text {
   text-align: center;
-  font-family: "Poppins";
+  font-family: "Courier New", Courier, monospace;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 30px;
-  color: #d7b686;
+  color: #f7f5f3;
 }
 
 /* PopularDishes */

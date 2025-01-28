@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Statistics from "./Statistics";
-import PopularDishes from "./PopularDishes";
-import NewDishes from "./NewDishes";
+import PopularProducts from "./PopularProducts";
+import NewProducts from "./NewProducts";
 import Advertisement from "./Advertisement";
 import ActiveUsers from "./ActiveUsers";
 import Events from "./Events";
@@ -9,24 +9,28 @@ import "../../../css/home.css";
 
 import { useDispatch } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
-import { setNewDishes, setPopularDishes, setTopUsers } from "./slice";
+import { setNewProducts, setPopularProducts, setTopUsers } from "./slice";
 import { Product } from "../../../lib/types/product";
 import ProductService from "../../services/ProductService";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import MemberService from "../../services/MemberService";
 import { Member } from "../../../lib/types/member";
+import { Route, Switch, useRouteMatch } from "react-router-dom";
 
 /** Redux Slice & Selector */
 const actionDispatch = (dispatch: Dispatch) => ({
-  setPopularDishes: (data: Product[]) => dispatch(setPopularDishes(data)),
-  setNewDishes: (data: Product[]) => dispatch(setNewDishes(data)),
+  setPopularProducts: (data: Product[]) => dispatch(setPopularProducts(data)),
+  setNewProducts: (data: Product[]) => dispatch(setNewProducts(data)),
   setTopUsers: (data: Member[]) => dispatch(setTopUsers(data)),
 });
 
 export default function HomePage() {
-  const { setPopularDishes, setNewDishes, setTopUsers } = actionDispatch(
-    useDispatch()
-  );
+  const {
+    setPopularProducts: setPopularProducts,
+    setNewProducts: setNewProducts,
+    setTopUsers,
+  } = actionDispatch(useDispatch());
+  const products = useRouteMatch();
 
   useEffect(() => {
     // // Backend server data request => Data
@@ -39,7 +43,7 @@ export default function HomePage() {
         productCollection: ProductCollection.CASUAL,
       })
       .then((data) => {
-        setPopularDishes(data);
+        setPopularProducts(data);
       })
       .catch((err) => console.log(err));
 
@@ -51,7 +55,7 @@ export default function HomePage() {
         productCollection: ProductCollection.CASUAL,
       })
       .then((data) => {
-        setNewDishes(data);
+        setNewProducts(data);
       })
       .catch((err) => console.log(err));
 
@@ -65,8 +69,8 @@ export default function HomePage() {
   return (
     <div className={"homepage"}>
       <Statistics />
-      <PopularDishes />
-      <NewDishes />
+      <PopularProducts />
+      <NewProducts />
       <Advertisement />
       <ActiveUsers />
       <Events />

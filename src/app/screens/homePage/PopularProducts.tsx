@@ -12,28 +12,28 @@ import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import { useSelector } from "react-redux";
 import { createSelector } from "@reduxjs/toolkit";
 import { Product } from "../../../lib/types/product";
-import { retrievePopularDishes } from "./selector";
+import { retrievePopularProducts } from "./selector";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import { serverApi } from "../../../lib/config";
 
 /** Redux Slice & Selector */
-const popularDishesRetriever = createSelector(
-  retrievePopularDishes,
-  (popularDishes) => ({ popularDishes })
+const popularProductsRetriever = createSelector(
+  retrievePopularProducts,
+  (popularProducts) => ({ popularProducts })
 );
 
-export default function PopularDishes() {
-  const { popularDishes } = useSelector(popularDishesRetriever);
+export default function PopularProducts() {
+  const { popularProducts } = useSelector(popularProductsRetriever);
 
-  console.log("popularDishes:", popularDishes);
+  console.log("popularProducts:", popularProducts);
   return (
     <div className="popular-dishes-frame">
       <Container>
         <Stack className="popular-section">
           <Box className="category-title">Popular Shoes</Box>
           <Stack className="cards-frame">
-            {popularDishes.length !== 0 ? (
-              popularDishes.map((product: Product) => {
+            {popularProducts.length !== 0 ? (
+              popularProducts.map((product: Product) => {
                 const imagePath = `${serverApi}/${product.productImages[0]}`;
                 return (
                   <CssVarsProvider key={product._id}>
