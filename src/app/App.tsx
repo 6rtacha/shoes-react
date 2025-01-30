@@ -17,6 +17,7 @@ import { useGlobals } from "./hooks/useGlobal";
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
+import { CartItem } from "../lib/types/search";
 
 function App() {
   const location = useLocation();
@@ -96,7 +97,11 @@ function App() {
         </Route>
         <Route path="/">
           {/* <Test /> */}
-          <HomePage />
+          <HomePage
+            onAdd={function (item: CartItem): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
         </Route>
       </Switch>
       <Footer />

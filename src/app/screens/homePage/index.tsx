@@ -15,7 +15,9 @@ import ProductService from "../../services/ProductService";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import MemberService from "../../services/MemberService";
 import { Member } from "../../../lib/types/member";
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import { Route, Router, Switch, useRouteMatch } from "react-router-dom";
+import { CartItem } from "../../../lib/types/search";
+import ChosenProduct from "../productsPage/ChosenProduct";
 
 /** Redux Slice & Selector */
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -24,12 +26,18 @@ const actionDispatch = (dispatch: Dispatch) => ({
   setTopUsers: (data: Member[]) => dispatch(setTopUsers(data)),
 });
 
-export default function HomePage() {
+interface HomePageProps {
+  onAdd: (item: CartItem) => void;
+}
+
+export default function HomePage(props: HomePageProps) {
   const {
     setPopularProducts: setPopularProducts,
     setNewProducts: setNewProducts,
     setTopUsers,
   } = actionDispatch(useDispatch());
+
+  const { onAdd } = props;
   const products = useRouteMatch();
 
   useEffect(() => {
@@ -69,8 +77,23 @@ export default function HomePage() {
   return (
     <div className={"homepage"}>
       <Statistics />
-      <PopularProducts />
-      <NewProducts />
+      <Switch>
+        <Route path={`${products.path}`}>
+          <PopularProducts />
+        </Route>
+        <Route path={`${products.path}/:productId`}>
+          <ChosenProduct onAdd={onAdd} />
+        </Route>
+      </Switch>
+      <Switch>
+        <Route path={`${products.path}`}>
+          <NewProducts />
+        </Route>
+        <Route path={`${products.path}/:productId`}>
+          <ChosenProduct onAdd={onAdd} />
+        </Route>
+      </Switch>
+
       <Advertisement />
       <ActiveUsers />
       <Events />

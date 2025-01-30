@@ -15,6 +15,7 @@ import { Product } from "../../../lib/types/product";
 import { retrieveNewProducts } from "./selector";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import { serverApi } from "../../../lib/config";
+import { useHistory } from "react-router-dom";
 
 /** Redux Slice & Selector */
 const newProductsRetriever = createSelector(
@@ -26,6 +27,11 @@ const newProductsRetriever = createSelector(
 
 export default function NewProducts() {
   const { newProducts } = useSelector(newProductsRetriever);
+
+  const history = useHistory();
+  const choosenProductHandler = (id: string) => {
+    history.push(`/products/${id}`);
+  };
 
   console.log("newProducts:", newProducts);
   return (
@@ -47,6 +53,7 @@ export default function NewProducts() {
                       key={product._id}
                       variant="outlined"
                       className={"card"}
+                      onClick={() => choosenProductHandler(product._id)}
                     >
                       <CardOverflow>
                         <div className="product-sale">{sizeVolume}</div>

@@ -15,6 +15,7 @@ import { Product } from "../../../lib/types/product";
 import { retrievePopularProducts } from "./selector";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import { serverApi } from "../../../lib/config";
+import { useHistory } from "react-router-dom";
 
 /** Redux Slice & Selector */
 const popularProductsRetriever = createSelector(
@@ -23,6 +24,10 @@ const popularProductsRetriever = createSelector(
 );
 
 export default function PopularProducts() {
+  const history = useHistory();
+  const choosenProductHandler = (id: string) => {
+    history.push(`/products/${id}`);
+  };
   const { popularProducts } = useSelector(popularProductsRetriever);
 
   console.log("popularProducts:", popularProducts);
@@ -37,7 +42,10 @@ export default function PopularProducts() {
                 const imagePath = `${serverApi}/${product.productImages[0]}`;
                 return (
                   <CssVarsProvider key={product._id}>
-                    <Card className={"card"}>
+                    <Card
+                      className={"card"}
+                      onClick={() => choosenProductHandler(product._id)}
+                    >
                       <CardCover>
                         <img src={imagePath} alt="" />
                       </CardCover>

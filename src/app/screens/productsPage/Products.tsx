@@ -90,7 +90,7 @@ export default function Products(props: ProductsProps) {
     setProductSearch({ ...productSearch });
   };
 
-  const chooseProductHandler = (id: string) => {
+  const choosenProductHandler = (id: string) => {
     history.push(`/products/${id}`);
   };
 
@@ -243,7 +243,7 @@ export default function Products(props: ProductsProps) {
                     <Stack
                       key={product._id}
                       className={"product-card"}
-                      onClick={() => chooseProductHandler(product._id)}
+                      onClick={() => choosenProductHandler(product._id)}
                     >
                       <Stack
                         className={"product-img"}
@@ -325,19 +325,19 @@ export default function Products(props: ProductsProps) {
       </Container>
       <div className={"brands-logo"}>
         <Container className={"family-brands"}>
-          <Box className={"category-title"}>Our Family Brands</Box>
+          <Box className={"category-title"}>Our Brands</Box>
           <Stack className={"brand-list"}>
             <Box className={"review-box"}>
-              <img src={"/img/gurme.webp"} alt={""} />
+              <img src={"/img/lacoste1.svg"} alt={""} />
             </Box>
             <Box className={"review-box"}>
-              <img src={"/img/sweets.webp"} alt={""} />
+              <img src={"/img/fila.svg"} alt={""} />
             </Box>
             <Box className={"review-box"}>
-              <img src={"/img/seafood.webp"} alt={""} />
+              <img src={"/img/nike.svg"} alt={""} />
             </Box>
             <Box className={"review-box"}>
-              <img src={"/img/doner.webp"} alt={""} />
+              <img src={"/img/puma.svg"} alt={""} id="puma" />
             </Box>
           </Stack>
         </Container>
