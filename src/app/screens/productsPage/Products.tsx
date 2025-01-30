@@ -17,7 +17,7 @@ import { setProducts } from "./slice";
 import { Product, ProductInquiry } from "../../../lib/types/product";
 import { retrieveProducts } from "./selector";
 import ProductService from "../../services/ProductService";
-import { ProductCollection } from "../../../lib/enums/product.enum";
+import { ProductCollection, ProductFor } from "../../../lib/enums/product.enum";
 import { serverApi } from "../../../lib/config";
 import { Collections } from "@mui/icons-material";
 import { useHistory } from "react-router-dom";
@@ -65,6 +65,7 @@ export default function Products(props: ProductsProps) {
   }, [searchText]);
 
   /** HANDLERS */
+
   const searchCollectionHandler = (collection: ProductCollection) => {
     productSearch.page = 1;
     productSearch.productCollection = collection;
@@ -167,28 +168,29 @@ export default function Products(props: ProductsProps) {
                 <Button
                   variant={"contained"}
                   color={
-                    productSearch.productCollection === ProductCollection.CASUAL
+                    productSearch.productCollection ===
+                    ProductCollection.SLIPPERS
                       ? "primary"
                       : "secondary"
                   }
                   onClick={() =>
-                    searchCollectionHandler(ProductCollection.CASUAL)
+                    searchCollectionHandler(ProductCollection.SLIPPERS)
                   }
                 >
-                  Other
+                  Slippers
                 </Button>
                 <Button
                   variant={"contained"}
                   color={
-                    productSearch.productCollection === ProductCollection.CASUAL
+                    productSearch.productCollection === ProductCollection.INDOOR
                       ? "primary"
                       : "secondary"
                   }
                   onClick={() =>
-                    searchCollectionHandler(ProductCollection.CASUAL)
+                    searchCollectionHandler(ProductCollection.INDOOR)
                   }
                 >
-                  Dessert
+                  Indoor
                 </Button>
                 <Button
                   variant={"contained"}

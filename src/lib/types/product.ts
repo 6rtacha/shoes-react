@@ -1,5 +1,6 @@
 import {
   ProductCollection,
+  ProductFor,
   ProductSeason,
   ProductSize,
   ProductStatus,
@@ -14,6 +15,7 @@ export interface Product {
   productLeftCount: number;
   productSize: ProductSize;
   productVolume: number;
+  productFor?: ProductFor;
   productSeason: ProductSeason;
   productDesc?: string;
   productImages: string[];
@@ -27,5 +29,6 @@ export interface ProductInquiry {
   page: number;
   limit: number;
   productCollection?: ProductCollection;
+  productFor?: ProductFor;
   search?: string;
 }

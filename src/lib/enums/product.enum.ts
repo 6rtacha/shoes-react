@@ -22,6 +22,8 @@ export enum ProductCollection {
   SPORT = "SPORT",
   CLASSIC = "CLASSIC",
   CASUAL = "CASUAL",
+  INDOOR = "INDOOR",
+  SLIPPERS = "SLIPPERS",
 }
 
 export enum ProductSize {
