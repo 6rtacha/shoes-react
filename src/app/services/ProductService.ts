@@ -16,6 +16,7 @@ class ProductService {
       if (input.productCollection)
         url += `&productCollection=${input.productCollection}`;
       if (input.productFor) url += `&productFor=${input.productFor}`;
+      if (input.productSeason) url += `&productSeason=${input.productSeason}`;
       if (input.search) url += `&search=${input.search}`;
 
       console.log("url:", url);

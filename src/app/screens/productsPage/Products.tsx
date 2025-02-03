@@ -17,7 +17,11 @@ import { setProducts } from "./slice";
 import { Product, ProductInquiry } from "../../../lib/types/product";
 import { retrieveProducts } from "./selector";
 import ProductService from "../../services/ProductService";
-import { ProductCollection, ProductFor } from "../../../lib/enums/product.enum";
+import {
+  ProductCollection,
+  ProductFor,
+  ProductSeason,
+} from "../../../lib/enums/product.enum";
 import { serverApi } from "../../../lib/config";
 import { Collections } from "@mui/icons-material";
 import { useHistory } from "react-router-dom";
@@ -43,7 +47,6 @@ export default function Products(props: ProductsProps) {
     page: 1,
     limit: 8,
     order: "createdAt",
-    productCollection: ProductCollection.CASUAL,
     search: "",
   });
   const [searchText, setSearchText] = useState<string>("");
@@ -65,6 +68,19 @@ export default function Products(props: ProductsProps) {
   }, [searchText]);
 
   /** HANDLERS */
+
+  const searchSeasonHandler = (season: ProductSeason) => {
+    productSearch.page = 1;
+    productSearch.productCollection = null;
+    productSearch.productSeason = season;
+    setProductSearch({ ...productSearch });
+  };
+
+  const allButton = () => {
+    productSearch.page = 1;
+    productSearch.productCollection = null;
+    setProductSearch({ ...productSearch });
+  };
 
   const searchCollectionHandler = (collection: ProductCollection) => {
     productSearch.page = 1;
@@ -125,6 +141,44 @@ export default function Products(props: ProductsProps) {
             </Stack>
           </Stack>
           <Stack className={"dishes-filter-section"}>
+            <Stack className={"dishes-filter-box"}>
+              <Button
+                variant={"contained"}
+                className={"order"}
+                color={
+                  productSearch.productSeason === ProductSeason.ALLSEASON
+                    ? "primary"
+                    : "secondary"
+                }
+                onClick={() => searchSeasonHandler(ProductSeason.ALLSEASON)}
+              >
+                All Season
+              </Button>
+              <Button
+                variant={"contained"}
+                className={"order"}
+                color={
+                  productSearch.productSeason === ProductSeason.SUMMER
+                    ? "primary"
+                    : "secondary"
+                }
+                onClick={() => searchSeasonHandler(ProductSeason.SUMMER)}
+              >
+                Summer
+              </Button>
+              <Button
+                variant={"contained"}
+                className={"order"}
+                color={
+                  productSearch.productSeason === ProductSeason.WINTER
+                    ? "primary"
+                    : "secondary"
+                }
+                onClick={() => searchSeasonHandler(ProductSeason.WINTER)}
+              >
+                Winter
+              </Button>
+            </Stack>
             <Stack className={"dishes-filter-box"}>
               <Button
                 variant={"contained"}
@@ -231,6 +285,17 @@ export default function Products(props: ProductsProps) {
                   }
                 >
                   Casual
+                </Button>
+                <Button
+                  variant={"contained"}
+                  color={
+                    productSearch.productCollection === null
+                      ? "primary"
+                      : "secondary"
+                  }
+                  onClick={() => allButton()}
+                >
+                  All
                 </Button>
               </div>
             </Stack>
