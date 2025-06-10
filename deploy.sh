@@ -1,4 +1,4 @@
-#!/bin/bash
+p#!/bin/bash
 
 #PRODUCTION
 git reset --hard
